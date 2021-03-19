@@ -7,13 +7,11 @@ import android.os.Bundle;
 import kg.app.a3homework6.R;
 import kg.app.a3homework6.databinding.ActivityMainBinding;
 import kg.app.a3homework6.domain.Math;
-import kg.app.a3homework6.domain.Words;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding ui;
     private Math math;
-    private Words words;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
         ui = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(ui.getRoot());
         math = new Math();
-        words = new Words();
 
         ui.btnAdd.setOnClickListener(v -> {
             int addOne = Integer.parseInt(ui.etOperatorOne.getText().toString());
@@ -50,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         ui.btnReverse.setOnClickListener(v -> {
             String word = String.valueOf(ui.etReverseOperator.getText().toString());
-            ui.tvResult.setText(String.valueOf(words.reverseWord(word)));
+            ui.tvResult.setText(String.valueOf(math.reverseWords(word)));
         });
     }
 }

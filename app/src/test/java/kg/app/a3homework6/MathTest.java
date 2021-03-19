@@ -46,6 +46,14 @@ public class MathTest {
         System.out.println("MUL");
     }
 
+    @Test
+    public void reverseWord(){
+        assertEquals("Two One", math.reverseWords("One Two"));
+        assertEquals("Geektech", math.reverseWords("Geektech"));
+        assertEquals("Three Two One", math.reverseWords("One Two Three"));
+        System.out.println("REVERSE");
+    }
+
 
 
     @After
